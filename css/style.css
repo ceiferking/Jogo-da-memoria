@@ -1,1 +1,43 @@
 @import url( 'https://fonts.googleapis.com/css2?família =Teko: wght @ 300; 400; 500&exibir = swap ');
+
+.login-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.login_header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.login_header img {
+    width: 250px;
+}
+
+.login_header {
+    font-size: 25px;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+.login-input {
+    background: linear-gradient(-40deg,purple, rgb(0, 153, 255), rgb(255, 0, 242));
+    color:rgb(255, 255, 255);
+    font-size: 2em;
+    margin: 15px;
+    max-width: 280px;
+    outline: none;
+    width: 100%;
+    font-style: italic;
+}
+
+.login-button {
+    padding: 5px 50px;
+    background: linear-gradient(45deg ,purple, rgb(0, 255, 157), rgb(255, 0, 242));
+}

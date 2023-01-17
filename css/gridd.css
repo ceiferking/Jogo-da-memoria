@@ -1,0 +1,36 @@
+.gridd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    background: rgb(143, 139, 139);
+    border-radius: 4px;
+    position: relative;
+    transition: all 450ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rebeccapurple;
+}
+
+.front{
+    transform: rotateY('180deg');
+}
+
+.back{
+    background-image: url('../imagens/back-cards.jpg');
+    backface-visibility: hidden;
+}

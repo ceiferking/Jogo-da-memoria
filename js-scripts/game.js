@@ -1,4 +1,4 @@
-const gridd = document.querySelector('.gridd');
+const gridd = document.querySelector('#gridd');
 
 const personagens = [
     'bakugo',
@@ -15,11 +15,6 @@ const personagens = [
     'engine',
 ];
 
-let clickCount = 0; // Variável global para armazenar o número de cliques
-
-function onClick() {
-    clickCount++; // correção de bug de clicar muito rapido varias vezes na mesma carta contar como carta revelada.
-}
 
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
@@ -33,13 +28,11 @@ let secondcard = '';
 const checkcards = () => {
     const firstCharacter = firstcard.getAttribute('data-character');
     const secondCharacter = secondcard.getAttribute('data-character');
-    
-    if (firstCharacter == secondCharacter & clickCount <= 2){
-        
+
+    if (firstCharacter === secondCharacter){
         firstcard.firstChild.classList.add('disable-card');
         secondcard.firstChild.classList.add('disable-card');
 
-        clickCount = 0;
         firstcard = '';
         secondcard = '';
     } else {
@@ -50,29 +43,35 @@ const checkcards = () => {
 
             firstcard = '';
             secondcard = '';
-            clickCount = 0;
         }, 500);
+        
+
     }
 }
 
 const revealCard = ({target}) =>{
+    if(target.parentNode.id.includes('gridd')){
+        target = null;
+    } //solução para o bug que adiciona a classe "reveal-card" para o gridd causando um bug visual
 
     if (target.parentNode.className.includes('reveal-card'))
     {
         return;
     }
 
-    if (firstcard == '') {
+    if (firstcard === '') {
+
         target.parentNode.classList.add('reveal-card');
         firstcard = target.parentNode;
-    }
 
-    else if (secondcard == '') {
+    } else if (secondcard === '') {
+
         target.parentNode.classList.add('reveal-card');
         secondcard = target.parentNode;
+        
+        checkcards();
 
-    }
-    checkcards();   
+    } 
 }
 
 const createCard = (personagen) => {

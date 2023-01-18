@@ -15,14 +15,64 @@ const personagens = [
     'engine',
 ];
 
+let clickCount = 0; // Variável global para armazenar o número de cliques
+
+function onClick() {
+    clickCount++; // correção de bug de clicar muito rapido varias vezes na mesma carta contar como carta revelada.
+}
+
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
     return element;
 }
 
-const revealcard = ( target ) =>{
+let firstcard = '';
+let secondcard = '';
+
+const checkcards = () => {
+    const firstCharacter = firstcard.getAttribute('data-character');
+    const secondCharacter = secondcard.getAttribute('data-character');
     
+    if (firstCharacter == secondCharacter & clickCount <= 2){
+        
+        firstcard.firstChild.classList.add('disable-card');
+        secondcard.firstChild.classList.add('disable-card');
+
+        clickCount = 0;
+        firstcard = '';
+        secondcard = '';
+    } else {
+
+        setTimeout(() => {
+            firstcard.classList.remove('reveal-card');
+            secondcard.classList.remove('reveal-card');
+
+            firstcard = '';
+            secondcard = '';
+            clickCount = 0;
+        }, 500);
+    }
+}
+
+const revealCard = ({target}) =>{
+
+    if (target.parentNode.className.includes('reveal-card'))
+    {
+        return;
+    }
+
+    if (firstcard == '') {
+        target.parentNode.classList.add('reveal-card');
+        firstcard = target.parentNode;
+    }
+
+    else if (secondcard == '') {
+        target.parentNode.classList.add('reveal-card');
+        secondcard = target.parentNode;
+
+    }
+    checkcards();   
 }
 
 const createCard = (personagen) => {
@@ -35,7 +85,8 @@ const createCard = (personagen) => {
     card.appendChild(front);
     card.appendChild(back);
 
-    card.addEventListener('click', revealcard);
+    card.addEventListener('click', revealCard);
+    card.setAttribute('data-character', personagen);
     
     return card;
 }

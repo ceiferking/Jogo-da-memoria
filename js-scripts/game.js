@@ -1,4 +1,6 @@
 const gridd = document.querySelector('#gridd');
+const spanPlayer = document.querySelector('.Player');
+const timerslain = document.querySelector('.Timer');
 
 const personagens = [
     'bakugo',
@@ -15,6 +17,16 @@ const personagens = [
     'engine',
 ];
 
+let contcard = 0;
+
+const checkendgame = () =>{
+    const disablecards = document.querySelectorAll('.disable-card');
+
+    if(disablecards.length === 24){
+        clearInterval(this.loop);
+        alert(`'Parabéns,${spanPlayer.innerHTML}, você ganhou! Seu tempo foi de: ${timerslain.innerHTML} segundos!'`);
+    }
+}
 
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
@@ -35,6 +47,11 @@ const checkcards = () => {
 
         firstcard = '';
         secondcard = '';
+
+    
+
+        checkendgame();
+
     } else {
 
         setTimeout(() => {
@@ -102,5 +119,17 @@ const loadGame = () => {
     });
 
 }
+const starTime = () => {
 
-loadGame();
+    this.loop = setInterval(() =>{
+
+        const curretTime = +timerslain.innerHTML;
+        timerslain.innerHTML = curretTime + 1;
+    }, 1000)
+}
+
+window.onload = () => {
+    spanPlayer.innerHTML = localStorage.getItem('Player');
+    starTime();
+    loadGame();
+}

@@ -1,11 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet"');
+
+body{
+    font-family: 'Teko', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../imagens/backgame.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 100px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 700px;
+    padding: 15px 1px;
+    margin: 0 0 30px;
+    border-radius: 2px;
+    font-size: 30px;
+}
+
 #gridd {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
-    width: 50%;
-    height: 50;
-    max-width: 400px;
-    max-height: 500px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 600px;
     margin: 0 auto;
 }
 
@@ -16,6 +46,7 @@
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
+    background-color: rgb(37, 4, 2);
 }
 
 .face {

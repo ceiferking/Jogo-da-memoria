@@ -1,7 +1,14 @@
-@import url( 'https://fonts.googleapis.com/css2?família =Teko: wght @ 300; 400; 500&exibir = swap ');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet"');
 
 body {
-    background: linear-gradient(-60deg, rgba(156, 16, 212, 0.363), rgba(182, 14, 160, 0.527), rgba(38, 148, 199, 0.514), rgba(4, 136, 81, 0.568), rgba(141, 130, 238, 0.452));
+    font-family: 'Teko', sans-serif;
+    background-image: url('../imagens/fundo.jpg');
+    background-size: cover;
+   
+}
+
+main{
+    background-color: rgba(58, 27, 65, 0.473);
 }
 
 .login-form {
@@ -21,8 +28,8 @@ body {
 }
 
 .login_header img {
-    width: 250px;
-    padding: 1em;
+    width: 350px;
+    padding: 0;
 }
 
 .login_header {

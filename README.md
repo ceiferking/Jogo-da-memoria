@@ -27,4 +27,3 @@ v5.7.9 no VS Code</p>
 <p>Tela em game parabenizando ao momento que você finaliza o jogo lhe dando seu tempo decorrido para achar todos os pares.</p>
 <img src="https://github.com/ceiferking/Jogo-da-memoria/assets/47835197/14ef5f24-fdbc-4f26-984b-e2d10b783b68" width="500px">
 </div>
-@import "{{ site.theme }}";

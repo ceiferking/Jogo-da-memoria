@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Teko', sans-serif;
-    background-image: url('../imagens/fundo.jpg');
+    background-image: url('fundo.jpg');
     background-size: cover;
    
 }

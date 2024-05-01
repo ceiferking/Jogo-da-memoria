@@ -16,7 +16,7 @@ const subGo = (event) => {
     event.preventDefault();
   
     localStorage.setItem('Player', input.value);
-    window.location = '/game.html';
+    window.location = 'game.html';
 
 }
 

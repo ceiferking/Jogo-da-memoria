@@ -1,6 +1,8 @@
 <h1>Jogo da memória com personagens do anime boku no hero academia</h1>
 <h2>Projeto usando css, html e JS</h2>
-<h2 href='https://ceiferking.github.io/Jogo-da-memoria/'>Link site jogavel</h2>
+<h2>
+<button src="https://ceiferking.github.io/Jogo-da-memoria/">Link site jogavel</button>
+</h2>
 <p>Desenvolvimento e testes feitos usando a extensão Live Server
 v5.7.9 no VS Code</p>
 

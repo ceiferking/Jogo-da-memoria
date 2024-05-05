@@ -135,7 +135,7 @@ header {
 
 #gridd {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1px;
     max-width: 30vh;
     max-height: 40vh;
@@ -152,7 +152,7 @@ header {
     max-width: 70vh;
     border: 1px black;
     padding: auto;
-    margin: 43vh auto ;
+    margin: 3vh auto;
     font-size: 2vh;
     cursor: pointer;
     align-items: center;

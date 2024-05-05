@@ -5,13 +5,15 @@ const form = document.querySelector('.login-form');
 const validainput = ({target}) => {
     if(target.value.length > 2) {
         button.removeAttribute('disabled','');
-        
-    } else{
-        button.setAttribute('disabled','');
-        
     }
-}
+    if(target.value.length > 10) {
+            button.setAttribute('disabled','');
+    }
+    if(target.value.length < 3) {
+            button.setAttribute('disabled','');
+    }
 
+}
 const subGo = (event) => {
     event.preventDefault();
   
